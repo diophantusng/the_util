@@ -48,7 +48,7 @@ class HttpService {
       }
     } on SocketException catch (e) {
       log(e.toString(), name: 'error');
-      throw Exception("Not Internet Connection");
+      throw Exception("Check your internet connection");
     } on FormatException catch (e) {
       log(e.toString(), name: 'error');
       throw Exception("Bad response format");
@@ -57,7 +57,7 @@ class HttpService {
       throw Exception(e);
     } catch (e) {
       log(e.toString(), name: 'error');
-      throw Exception("Something wen't wrong");
+      throw Exception("");
     }
   }
 }

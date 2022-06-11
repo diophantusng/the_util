@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 extension StringExtension on String {
   String? capitalize() {
     if (isEmpty) {
@@ -14,3 +16,9 @@ extension EmailValidator on String {
         .hasMatch(this);
   }
 }
+
+bool isNumeric(String s) {
+  return double.tryParse(s) != null;
+}
+
+final moneyformatter = NumberFormat('##,###');
