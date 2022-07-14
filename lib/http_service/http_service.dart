@@ -11,7 +11,7 @@ class HttpService {
 
   Future<http.Response> request(
       {required String url_,
-      required Method method,
+      Method? method,
       Map<String, String>? headers,
       dynamic body,
       Map<String, dynamic>? params}) async {
@@ -21,6 +21,9 @@ class HttpService {
 
     try {
       switch (method) {
+        case null:
+          response = await client.get(url, headers: headers);
+          break;
         case Method.post:
           response = await client.post(url, headers: headers, body: body);
           break;

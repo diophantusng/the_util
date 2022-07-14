@@ -1,16 +1,20 @@
-import 'package:flutter/foundation.dart';
 import 'package:http_interceptor/http_interceptor.dart';
 
-class LoggerInterceptor implements InterceptorContract {
+class HeaderInterceptor implements InterceptorContract {
+  final String token;
+
+  HeaderInterceptor(this.token);
   @override
   Future<RequestData> interceptRequest({required RequestData data}) async {
-    debugPrint(data.toString());
+    data.headers = {
+      "Content-Type": "application/json",
+      'authorization': 'Bearer $token'
+    };
     return data;
   }
 
   @override
   Future<ResponseData> interceptResponse({required ResponseData data}) async {
-    debugPrint(data.toString());
     return data;
   }
 }
