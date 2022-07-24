@@ -6,8 +6,9 @@ import 'package:http/http.dart' as http;
 enum Method { post, get, put, delete, patch }
 
 class HttpService {
-  HttpService(this.client);
+  HttpService(this.client, this.baseUrl);
   final http.Client client;
+  final String baseUrl;
 
   Future<http.Response> request(
       {required String url_,
@@ -17,7 +18,7 @@ class HttpService {
       Map<String, dynamic>? params}) async {
     http.Response response;
 
-    var url = Uri.parse(url_);
+    var url = Uri.parse(baseUrl + url_);
 
     try {
       switch (method) {
@@ -47,7 +48,8 @@ class HttpService {
         case 500:
           throw Exception("Server Error");
         default:
-          throw Exception("Something does wen't wrong..");
+          throw response.body;
+        // throw Exception(response.body);
       }
     } on SocketException catch (e) {
       log(e.toString(), name: 'error');
@@ -60,7 +62,7 @@ class HttpService {
       throw Exception(e);
     } catch (e) {
       log(e.toString(), name: 'error');
-      throw Exception("");
+      throw Exception(e);
     }
   }
 }
