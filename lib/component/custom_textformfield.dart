@@ -2,22 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  CustomTextFormField(
-      {Key? key,
-      required this.labelText,
-      this.initialValue = '',
-      this.enabled = true,
-      this.obscureText = false,
-      this.onChanged,
-      this.validator,
-      this.autovalidateMode,
-      this.autocorrect = false,
-      this.enableSuggestions = false,
-      this.inputFormatters,
-      this.width = 350,
-      this.maxLines = 1,
-      this.minLines = 1})
-      : super(key: key);
+  CustomTextFormField({
+    Key? key,
+    required this.labelText,
+    this.initialValue = '',
+    this.enabled = true,
+    this.obscureText = false,
+    this.onChanged,
+    this.validator,
+    this.autovalidateMode,
+    this.autocorrect = false,
+    this.enableSuggestions = false,
+    this.inputFormatters,
+    this.width = 350,
+    this.maxLines = 1,
+    this.minLines = 1,
+    this.onTap,
+    this.readOnly = false,
+  }) : super(key: key);
 
   final String labelText;
   final String initialValue;
@@ -32,6 +34,8 @@ class CustomTextFormField extends StatelessWidget {
   AutovalidateMode? autovalidateMode;
   bool enableSuggestions;
   bool autocorrect;
+  void Function()? onTap;
+  bool readOnly;
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +44,8 @@ class CustomTextFormField extends StatelessWidget {
       child: SizedBox(
         width: width,
         child: TextFormField(
+          readOnly: readOnly,
+          onTap: onTap,
           maxLines: maxLines, // <-- SEE HERE
           minLines: minLines, // <-- SEE HERE
           inputFormatters: inputFormatters,

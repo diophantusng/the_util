@@ -6,3 +6,6 @@ geolocator_web=/Users/odunadeboye/dev/codes/flutter/.pub-cache/hosted/pub.dartla
 geolocator_windows=/Users/odunadeboye/dev/codes/flutter/.pub-cache/hosted/pub.dartlang.org/geolocator_windows-0.1.1/
 location=/Users/odunadeboye/dev/codes/flutter/.pub-cache/hosted/pub.dartlang.org/location-4.4.0/
 location_web=/Users/odunadeboye/dev/codes/flutter/.pub-cache/hosted/pub.dartlang.org/location_web-3.1.1/
+webview_flutter=/Users/odunadeboye/dev/codes/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter-3.0.4/
+webview_flutter_android=/Users/odunadeboye/dev/codes/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter_android-2.9.2/
+webview_flutter_wkwebview=/Users/odunadeboye/dev/codes/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter_wkwebview-2.9.2/
