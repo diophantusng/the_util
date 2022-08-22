@@ -7,6 +7,7 @@ import 'paystack_models.dart';
 class PaystackView extends StatelessWidget {
   PaystackView(
       {super.key,
+      required this.type,
       required int amount,
       required this.backendUrl,
       required this.paystackPublicKey,
@@ -17,8 +18,10 @@ class PaystackView extends StatelessWidget {
   final String backendUrl;
   final String paystackPublicKey;
   final String token;
+  final String type;
 
   late final controller = PaymentViewController(
+      type: type,
       amount: _amount,
       backendUrl: backendUrl,
       paystackPublicKey: paystackPublicKey,

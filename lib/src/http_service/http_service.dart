@@ -6,8 +6,8 @@ import 'package:http/http.dart' as http;
 enum Method { post, get, put, delete, patch }
 
 class HttpService {
-  HttpService(this.client, this.baseUrl);
-  final http.Client client;
+  HttpService({required this.client, required this.baseUrl});
+  http.Client client;
   final String baseUrl;
 
   Future<http.Response> request(

@@ -34,8 +34,8 @@ class PaystackPaymentRepository {
     }
   }
 
-  Future fetchAccessCodeFrmServer(int amount) async {
-    String url = '$backendUrl/initialize/$amount';
+  Future fetchAccessCodeFrmServer(int amount, String via, String type) async {
+    String url = '$backendUrl/initialize/$amount/$via/$type';
     try {
       final response = await http.get(Uri.parse(url), headers: {
         'Content-Type': 'application/json',

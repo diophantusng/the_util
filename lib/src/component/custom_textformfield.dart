@@ -5,7 +5,7 @@ class CustomTextFormField extends StatelessWidget {
   CustomTextFormField({
     Key? key,
     required this.labelText,
-    this.initialValue = '',
+    this.initialValue,
     this.enabled = true,
     this.obscureText = false,
     this.onChanged,
@@ -19,10 +19,12 @@ class CustomTextFormField extends StatelessWidget {
     this.minLines = 1,
     this.onTap,
     this.readOnly = false,
+    this.keyboardType,
+    this.controller,
   }) : super(key: key);
 
   final String labelText;
-  final String initialValue;
+  final String? initialValue;
   final bool enabled;
   final bool obscureText;
   void Function(String)? onChanged;
@@ -36,6 +38,8 @@ class CustomTextFormField extends StatelessWidget {
   bool autocorrect;
   void Function()? onTap;
   bool readOnly;
+  TextInputType? keyboardType;
+  TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +48,8 @@ class CustomTextFormField extends StatelessWidget {
       child: SizedBox(
         width: width,
         child: TextFormField(
+          controller: controller,
+          keyboardType: keyboardType,
           readOnly: readOnly,
           onTap: onTap,
           maxLines: maxLines, // <-- SEE HERE

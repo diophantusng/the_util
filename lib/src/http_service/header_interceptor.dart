@@ -3,7 +3,7 @@ import 'package:http_interceptor/http_interceptor.dart';
 class HeaderInterceptor implements InterceptorContract {
   final String token;
 
-  HeaderInterceptor(this.token);
+  HeaderInterceptor({required this.token});
   @override
   Future<RequestData> interceptRequest({required RequestData data}) async {
     data.headers = {

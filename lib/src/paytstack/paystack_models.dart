@@ -72,7 +72,7 @@ class Data {
   String? domain;
   num? metadata;
   String? gatewayResponse;
-  Null? message;
+  String? message;
   String? channel;
   String? ipAddress;
   Log? log;
