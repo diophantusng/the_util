@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:responsive_table/responsive_table.dart';
 
 class CustomTable extends StatelessWidget {
-  CustomTable(
+  const CustomTable(
       {Key? key,
       required this.headers,
       required this.source,
@@ -18,8 +18,8 @@ class CustomTable extends StatelessWidget {
   final int currentPage;
   final int currentPerPage;
   final int total;
-  void Function(int, int) fetch;
-  void Function(dynamic)? onRowTapped;
+  final void Function(int, int) fetch;
+  final void Function(dynamic)? onRowTapped;
 
   @override
   Widget build(BuildContext context) {
