@@ -21,3 +21,5 @@ export 'src/component/custom_textformfield.dart';
 
 export 'src/responsive.dart';
 export 'src/component/custom_table.dart';
+
+export 'src/services/services.dart';

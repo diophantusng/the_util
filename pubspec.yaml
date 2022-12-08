@@ -2,6 +2,7 @@ name: the_util
 description: A new Flutter package project.
 version: 0.0.1
 # homepage:
+publish_to: "none"
 
 environment:
   sdk: ">=2.17.2 <3.0.0"
@@ -17,6 +18,10 @@ dependencies:
   location: ^4.4.0
   webview_flutter: ^3.0.4
   responsive_table: ^0.2.0+2
+  excel:
+    git:
+      url: https://github.com/odunboye/excel
+      ref: null-safety
 
 dev_dependencies:
   flutter_test:
