@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:responsive_table/responsive_table.dart';
 
 class CustomTable extends StatelessWidget {
-  const CustomTable(
+  CustomTable(
       {Key? key,
       required this.headers,
       required this.source,
@@ -10,7 +10,8 @@ class CustomTable extends StatelessWidget {
       required this.currentPerPage,
       required this.total,
       required this.fetch,
-      this.onRowTapped})
+      this.onRowTapped,
+      this.cardColor})
       : super(key: key);
 
   final List<DatatableHeader> headers;
@@ -20,6 +21,7 @@ class CustomTable extends StatelessWidget {
   final int total;
   final void Function(int, int) fetch;
   final void Function(dynamic)? onRowTapped;
+  Color? cardColor = Colors.grey[100];
 
   @override
   Widget build(BuildContext context) {
@@ -36,13 +38,14 @@ class CustomTable extends StatelessWidget {
             //   maxHeight: 800,
             // ),
             child: Card(
-              color: Colors.grey[100],
+              color: cardColor, //Colors.grey[100],
               elevation: 1,
               shadowColor: Colors.black,
               clipBehavior: Clip.none,
               child: ResponsiveDatatable(
                 expanded: List.generate(currentPerPage, (index) => false),
-                rowTextStyle: const TextStyle(fontSize: 13),
+                rowTextStyle: const TextStyle(
+                    fontSize: 13, overflow: TextOverflow.ellipsis),
                 selecteds: const [],
                 selectedDecoration: const BoxDecoration(),
                 headerDecoration: const BoxDecoration(

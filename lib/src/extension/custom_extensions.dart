@@ -17,6 +17,12 @@ extension EmailValidator on String {
   }
 }
 
+extension PhoneValidator on String {
+  bool isValidPhone() {
+    return !RegExp(r'(^(?:[+0]9)?[0-9]{10,12}$)').hasMatch(this);
+  }
+}
+
 bool isNumeric(String s) {
   return double.tryParse(s) != null;
 }
