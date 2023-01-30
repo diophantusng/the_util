@@ -25,7 +25,7 @@ class CustomTable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var _currentPage = currentPage + 1;
+    var _currentPage = currentPage;
     return SingleChildScrollView(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -95,7 +95,7 @@ class CustomTable extends StatelessWidget {
                     onPressed: _currentPage == 1
                         ? null
                         : () {
-                            var _nextSet = _currentPage - 1;
+                            final _nextSet = _currentPage - 1;
                             fetch(_nextSet, currentPerPage);
                           },
                     padding: const EdgeInsets.symmetric(horizontal: 15),
