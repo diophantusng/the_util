@@ -28,6 +28,9 @@ class HttpService {
         case Method.post:
           response = await client.post(url, headers: headers, body: body);
           break;
+        case Method.put:
+          response = await client.put(url, headers: headers, body: body);
+          break;
         case Method.delete:
           response = await client.delete(url, headers: headers, body: body);
           break;
@@ -40,6 +43,8 @@ class HttpService {
 
       switch (response.statusCode) {
         case 200:
+          return response;
+        case 201:
           return response;
         case 400:
           throw Exception('Bad Request');

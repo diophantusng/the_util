@@ -20,6 +20,14 @@ class CustomButton extends StatelessWidget {
       this.onPressed})
       : super(key: key);
 
+  CustomButton.disabled(
+      {Key? key,
+      required this.labelText,
+      this.backgroundColor = Colors.grey,
+      this.textColor = Colors.black,
+      this.onPressed})
+      : super(key: key);
+
   final String labelText;
   final Color backgroundColor;
   final Color textColor;

@@ -23,3 +23,7 @@ export 'src/responsive.dart';
 export 'src/component/custom_table.dart';
 
 export 'src/services/services.dart';
+
+export 'src/validator.dart';
+
+export 'src/currecy_pt_br_input_formatter.dart';

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_table/responsive_table.dart';
 
+// ignore: must_be_immutable
 class CustomTable extends StatelessWidget {
   CustomTable(
       {Key? key,
